@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo", "TestingDemo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo.Tests", "TestingDemo.Tests\TestingDemo.Tests.csproj", "{816C4F49-D092-45FA-B9B7-27CDBD9FAABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{22211512-107D-4326-BA46-09437825FCE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo.BLL", "BLL\TestingDemo.BLL.csproj", "{22211512-107D-4326-BA46-09437825FCE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{1AD41283-44C7-446A-B648-97D583FCCE90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo.DAL", "DAL\TestingDemo.DAL.csproj", "{1AD41283-44C7-446A-B648-97D583FCCE90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
