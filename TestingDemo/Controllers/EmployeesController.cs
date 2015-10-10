@@ -1,13 +1,13 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
+using System.Collections.ObjectModel;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using BLL;
-using TestingDemo.DAL;
-using TestingDemo.DAL.Models;
+using AutoMapper;
+using TestingDemo.Application;
+using TestingDemo.Domain;
+using TestingDemo.Infrastructure.Models;
+using TestingDemo.ViewModels;
 
 namespace TestingDemo.Controllers
 {
@@ -25,7 +25,7 @@ namespace TestingDemo.Controllers
         {
             var employees = _employeeService.GetEmployees();
 
-            return View(employees);
+            return View(Mapper.Map<Collection<EmployeeListItem>>(employees));
         }
 
         // GET: Employees/Create
@@ -37,15 +37,16 @@ namespace TestingDemo.Controllers
         // POST: Employees/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LastName,FirstName,BirthDate")] Employee employee)
+        public ActionResult Create([Bind(Include = "Id,LastName,FirstName,BirthDate,Salary")] EmployeeEdit employeeEdit)
         {
             if (ModelState.IsValid)
             {
+                var employee = Mapper.Map<Domain.Employee>(employeeEdit);
                 _employeeService.CreateEmployee(employee);
                 return RedirectToAction("Index");
             }
 
-            return View(employee);
+            return View(employeeEdit);
         }
 
         // GET: Employees/Edit/5
@@ -55,25 +56,29 @@ namespace TestingDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = _employeeService.GetEmployeeById(id.Value);
+            var employee = _employeeService.GetEmployeeById(id.Value);
             if (employee == null)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return View(Mapper.Map<EmployeeEdit>(employee));
         }
 
         // POST: Employees/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,LastName,FirstName,BirthDate")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Id,LastName,FirstName,BirthDate, Salary")] EmployeeEdit employeeEdit)
         {
             if (ModelState.IsValid)
             {
+                var employee = _employeeService.GetEmployeeById(employeeEdit.Id);
+
+                Mapper.Map(employeeEdit, employee);
+
                 _employeeService.UpdateEmployee(employee);
                 return RedirectToAction("Index");
             }
-            return View(employee);
+            return View(employeeEdit);
         }
 
         // GET: Employees/Delete/5
@@ -81,7 +86,8 @@ namespace TestingDemo.Controllers
         public ActionResult Delete(int id)
         {
             var employee = _employeeService.GetEmployeeById(id);
-            return View(employee);
+
+            return View(Mapper.Map<EmployeeDelete>(employee));
         }
 
         // POST: Employees/Delete/5

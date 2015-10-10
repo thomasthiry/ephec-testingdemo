@@ -1,4 +1,4 @@
-﻿@model TestingDemo.DAL.Models.Employee
+﻿@model TestingDemo.ViewModels.EmployeeDelete
 
 @{
     ViewBag.Title = "Delete";
@@ -26,15 +26,6 @@
         <dd>
             @Html.DisplayFor(model => model.FirstName)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BirthDate)
-        </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {

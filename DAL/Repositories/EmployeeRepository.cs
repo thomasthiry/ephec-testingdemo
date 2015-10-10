@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TestingDemo.DAL.Models;
+using AutoMapper;
+using TestingDemo.Infrastructure.Models;
 
-namespace TestingDemo.DAL.Repositories
+namespace TestingDemo.Infrastructure.Repositories
 {
     public class EmployeeRepository : IEmployeeRepository
     {
@@ -17,38 +15,51 @@ namespace TestingDemo.DAL.Repositories
             _dbContext = dbContext;
         }
 
-        public IList<Employee> GetList()
+        public IList<Domain.Employee> GetList()
         {
-            return _dbContext.Employees.ToList();
+            var employees = _dbContext.Employees.ToList();
+            return Mapper.Map< IList<Domain.Employee>>(employees);
         }
 
-        public Employee GetById(int id)
+        public Domain.Employee GetById(int id)
+        {
+            var employee = GetEmployeeFromDbById(id);
+
+            return Mapper.Map<Domain.Employee>(employee);
+        }
+
+        public void Update(Domain.Employee employee)
+        {
+            var employeeEF = GetEmployeeFromDbById(employee.Id);
+
+            Mapper.Map(employee, employeeEF);
+
+            _dbContext.Entry(employeeEF).State = EntityState.Modified;
+        }
+
+        public void Insert(Domain.Employee employee)
+        {
+            var employeeEF = Mapper.Map<Employee>(employee);
+            _dbContext.Employees.Add(employeeEF);
+        }
+
+        public void Delete(int id)
+        {
+            var employee = GetEmployeeFromDbById(id);
+            _dbContext.Employees.Remove(employee);
+        }
+
+        private Employee GetEmployeeFromDbById(int id)
         {
             var query = from employee in _dbContext.Employees
-                where employee.Id == id
-                select employee;
+                        where employee.Id == id
+                        select employee;
             return query.SingleOrDefault();
-        }
-
-        public void Update(Employee employee)
-        {
-            _dbContext.Entry(employee).State = EntityState.Modified;
         }
 
         public void Save()
         {
             _dbContext.SaveChanges();
-        }
-
-        public void Insert(Employee employee)
-        {
-            _dbContext.Employees.Add(employee);
-        }
-
-        public void Delete(int id)
-        {
-            var employee = GetById(id);
-            _dbContext.Employees.Remove(employee);
         }
     }
 }

@@ -7,13 +7,13 @@ using System.Resources;
 namespace TestingDemo.Infrastructure.Migrations
 {
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class RequiredFields : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RequiredFields));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510081249353_InitialCreate"; }
+            get { return "201510101848129_RequiredFields"; }
         }
         
         string IMigrationMetadata.Source

@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -154,18 +158,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="ViewModels\EmployeeDelete.cs" />
+    <Compile Include="ViewModels\EmployeeListItem.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EmployeeEdit.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\TestingDemo.mdf" />
-    <Content Include="App_Data\TestingDemo_log.ldf">
-      <DependentUpon>TestingDemo.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -202,27 +205,31 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employees\Create.cshtml" />
     <Content Include="Views\Employees\Delete.cshtml" />
-    <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\TestingDemo.BLL.csproj">
+    <ProjectReference Include="..\BLL\TestingDemo.Domain.csproj">
       <Project>{22211512-107D-4326-BA46-09437825FCE6}</Project>
-      <Name>TestingDemo.BLL</Name>
+      <Name>TestingDemo.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\TestingDemo.DAL.csproj">
-      <Project>{1AD41283-44C7-446A-B648-97D583FCCE90}</Project>
-      <Name>TestingDemo.DAL</Name>
+    <ProjectReference Include="..\DAL\TestingDemo.Infrastructure.csproj">
+      <Project>{1ad41283-44c7-446a-b648-97d583fcce90}</Project>
+      <Name>TestingDemo.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestingDemo.Application\TestingDemo.Application.csproj">
+      <Project>{43EF64EF-10CC-436B-8FAD-6157DF5BDBE4}</Project>
+      <Name>TestingDemo.Application</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

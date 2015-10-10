@@ -1,19 +1,16 @@
-namespace TestingDemo.DAL.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TestingDemo.DAL.TestingDemoContext>
+namespace TestingDemo.Infrastructure.Migrations
+{
+    internal sealed class Configuration : DbMigrationsConfiguration<TestingDemoContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "TestingDemo.DAL.TestingDemoContext";
+            ContextKey = "TestingDemo.Infrastructure.TestingDemoContext";
         }
 
-        protected override void Seed(TestingDemo.DAL.TestingDemoContext context)
+        protected override void Seed(TestingDemoContext context)
         {
             //  This method will be called after migrating to the latest version.
 

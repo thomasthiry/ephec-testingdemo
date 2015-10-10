@@ -1,8 +1,7 @@
 using System;
-using BLL;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
-using TestingDemo.DAL.Repositories;
+using TestingDemo.Application;
+using TestingDemo.Infrastructure.Repositories;
 
 namespace TestingDemo.App_Start
 {

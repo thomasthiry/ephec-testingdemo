@@ -1,14 +1,8 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TestingDemo.DAL;
-using TestingDemo.DAL.Models;
-using TestingDemo.DAL.Repositories;
+﻿using System.Collections.Generic;
+using TestingDemo.Domain;
+using TestingDemo.Infrastructure.Repositories;
 
-namespace BLL
+namespace TestingDemo.Application
 {
     public class EmployeeService : IEmployeeService
     {

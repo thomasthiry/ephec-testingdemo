@@ -1,8 +1,7 @@
-namespace TestingDemo.DAL.Migrations
+using System.Data.Entity.Migrations;
+
+namespace TestingDemo.Infrastructure.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class InitialCreate : DbMigration
     {
         public override void Up()

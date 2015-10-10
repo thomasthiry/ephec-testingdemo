@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using TestingDemo.DAL.Models;
+using TestingDemo.Infrastructure.Models;
 
-namespace TestingDemo.DAL.Repositories
+namespace TestingDemo.Infrastructure.Repositories
 {
     public interface IEmployeeRepository
     {
-        IList<Employee> GetList();
+        IList<Domain.Employee> GetList();
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using TestingDemo.DAL.Models;
+using TestingDemo.Infrastructure.Models;
 
-namespace TestingDemo.DAL
+namespace TestingDemo.Infrastructure
 {
     public class TestingDemoContext : DbContext
     {

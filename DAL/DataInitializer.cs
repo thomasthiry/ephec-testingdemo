@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using TestingDemo.DAL.Models;
+using TestingDemo.Infrastructure.Models;
 
-namespace TestingDemo.DAL
+namespace TestingDemo.Infrastructure
 {
+    // Configured (or disabled) in TestingDemo > web.config
     public class DataInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<TestingDemoContext>
     {
         protected override void Seed(TestingDemoContext context)

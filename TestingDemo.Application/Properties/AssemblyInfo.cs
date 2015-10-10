@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BLL")]
+[assembly: AssemblyTitle("TestingDemo.Application")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ogone")]
-[assembly: AssemblyProduct("BLL")]
+[assembly: AssemblyProduct("TestingDemo.Application")]
 [assembly: AssemblyCopyright("Copyright © Ogone 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("22211512-107d-4326-ba46-09437825fce6")]
+[assembly: Guid("43ef64ef-10cc-436b-8fad-6157df5bdbe4")]
 
 // Version information for an assembly consists of the following four values:
 //

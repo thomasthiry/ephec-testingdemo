@@ -5,11 +5,21 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo", "TestingDemo\TestingDemo.csproj", "{56240D06-728C-4EF8-8BA8-1E6C21307ACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo.Tests", "TestingDemo.Tests\TestingDemo.Tests.csproj", "{816C4F49-D092-45FA-B9B7-27CDBD9FAABB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo.Domain.Tests", "TestingDemo.Tests\TestingDemo.Domain.Tests.csproj", "{816C4F49-D092-45FA-B9B7-27CDBD9FAABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo.BLL", "BLL\TestingDemo.BLL.csproj", "{22211512-107D-4326-BA46-09437825FCE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo.Domain", "BLL\TestingDemo.Domain.csproj", "{22211512-107D-4326-BA46-09437825FCE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo.DAL", "DAL\TestingDemo.DAL.csproj", "{1AD41283-44C7-446A-B648-97D583FCCE90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo.Infrastructure", "DAL\TestingDemo.Infrastructure.csproj", "{1AD41283-44C7-446A-B648-97D583FCCE90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDemo.Application", "TestingDemo.Application\TestingDemo.Application.csproj", "{43EF64EF-10CC-436B-8FAD-6157DF5BDBE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation", "1. Presentation", "{CA1110CA-FE69-481C-9774-F0C5E92FBD56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Application", "2. Application", "{AD460994-FF45-46BC-9C2E-6F556A17F874}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Domain", "3. Domain", "{2DEDDCBE-8CB6-433C-AA00-C25A1E0335B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Infrastructure", "4. Infrastructure", "{B89E0252-D931-4775-ACD7-DAFF08891CC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +43,19 @@ Global
 		{1AD41283-44C7-446A-B648-97D583FCCE90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AD41283-44C7-446A-B648-97D583FCCE90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AD41283-44C7-446A-B648-97D583FCCE90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43EF64EF-10CC-436B-8FAD-6157DF5BDBE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43EF64EF-10CC-436B-8FAD-6157DF5BDBE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43EF64EF-10CC-436B-8FAD-6157DF5BDBE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43EF64EF-10CC-436B-8FAD-6157DF5BDBE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{56240D06-728C-4EF8-8BA8-1E6C21307ACC} = {CA1110CA-FE69-481C-9774-F0C5E92FBD56}
+		{816C4F49-D092-45FA-B9B7-27CDBD9FAABB} = {2DEDDCBE-8CB6-433C-AA00-C25A1E0335B6}
+		{22211512-107D-4326-BA46-09437825FCE6} = {2DEDDCBE-8CB6-433C-AA00-C25A1E0335B6}
+		{1AD41283-44C7-446A-B648-97D583FCCE90} = {B89E0252-D931-4775-ACD7-DAFF08891CC6}
+		{43EF64EF-10CC-436B-8FAD-6157DF5BDBE4} = {AD460994-FF45-46BC-9C2E-6F556A17F874}
 	EndGlobalSection
 EndGlobal
