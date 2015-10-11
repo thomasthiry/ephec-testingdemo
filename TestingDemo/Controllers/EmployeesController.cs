@@ -37,7 +37,9 @@ namespace TestingDemo.Controllers
         // POST: Employees/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LastName,FirstName,BirthDate,Salary")] EmployeeEdit employeeEdit)
+        public ActionResult Create(
+            [Bind(Include = "Id,LastName,FirstName,BirthDate,Salary,IsMarried,NumberOfChildren,HasMealVouchers,HealthInsuranceMonthlyAmount,GroupInsuranceMonthlyAmount,CellphoneMonthlyAmount")]
+            EmployeeEdit employeeEdit)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +69,7 @@ namespace TestingDemo.Controllers
         // POST: Employees/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,LastName,FirstName,BirthDate, Salary")] EmployeeEdit employeeEdit)
+        public ActionResult Edit([Bind(Include = "Id,LastName,FirstName,BirthDate,Salary,IsMarried,NumberOfChildren,HasMealVouchers,HealthInsuranceMonthlyAmount,GroupInsuranceMonthlyAmount,CellphoneMonthlyAmount")] EmployeeEdit employeeEdit)
         {
             if (ModelState.IsValid)
             {

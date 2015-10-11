@@ -11,6 +11,7 @@ namespace TestingDemo.ViewModels
         [Display(Name = "First name")]
         public string FirstName { get; set; }
         [Display(Name = "Birth date")]
+        [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
     }
 }

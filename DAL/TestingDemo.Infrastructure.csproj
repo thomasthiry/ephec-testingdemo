@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201510101848129_RequiredFields.Designer.cs">
       <DependentUpon>201510101848129_RequiredFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510111941379_AddBasicFieldsToEmployee.cs" />
+    <Compile Include="Migrations\201510111941379_AddBasicFieldsToEmployee.Designer.cs">
+      <DependentUpon>201510111941379_AddBasicFieldsToEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510101848129_RequiredFields.resx">
       <DependentUpon>201510101848129_RequiredFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510111941379_AddBasicFieldsToEmployee.resx">
+      <DependentUpon>201510111941379_AddBasicFieldsToEmployee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

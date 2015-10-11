@@ -1,7 +1,6 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
-namespace TestingDemo.Infrastructure.Models
+namespace TestingDemo.Domain
 {
     public class Employee
     {
@@ -17,7 +16,25 @@ namespace TestingDemo.Infrastructure.Models
         public decimal GroupInsuranceMonthlyAmount { get; set; }
         public decimal CellphoneMonthlyAmount { get; set; }
 
+        public decimal MonthlyCost
+        {
+            get
+            {
+                decimal mealVoucherMonthlyAmount = 0;
+                if (HasMealVouchers)
+                {
+                    mealVoucherMonthlyAmount = 21*7m;
+                }
 
-        // voiture de fonction
+                return Salary + mealVoucherMonthlyAmount + HealthInsuranceMonthlyAmount + GroupInsuranceMonthlyAmount + CellphoneMonthlyAmount;
+            }
+        }
+
+        public decimal YearlyCost
+        {
+            // double pécule de vacance = 92 % en +
+
+            get { return MonthlyCost*12; }
+        }
     }
 }
