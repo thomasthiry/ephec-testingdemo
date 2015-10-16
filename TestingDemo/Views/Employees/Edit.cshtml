@@ -68,7 +68,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HealthInsuranceMonthlyAmount, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.HealthInsuranceMonthlyAmount, new { htmlAttributes = new { @class = "form-control" } }) EUR (per month)
+                @Html.EditorFor(model => model.HealthInsuranceMonthlyAmount, new { htmlAttributes = new { @class = "form-control" } }) EUR (per month, per person)
                 @Html.ValidationMessageFor(model => model.HealthInsuranceMonthlyAmount, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -82,10 +82,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.YearlyCost, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MonthlyCost, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DisplayFor(model => model.YearlyCost, new { htmlAttributes = new { @class = "form-control" } }) EUR
-                @Html.ValidationMessageFor(model => model.YearlyCost, "", new { @class = "text-danger" })
+                @Html.DisplayFor(model => model.MonthlyCost, new { htmlAttributes = new { @class = "form-control" } }) EUR (per month)
+                @Html.ValidationMessageFor(model => model.MonthlyCost, "", new { @class = "text-danger" })
             </div>
         </div>
 

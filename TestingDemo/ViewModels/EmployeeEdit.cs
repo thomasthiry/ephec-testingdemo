@@ -39,7 +39,7 @@ namespace TestingDemo.ViewModels
         [Display(Name = "Cellphone Amount")]
         public decimal CellphoneMonthlyAmount { get; set; }
 
-        [Display(Name = "Yearly Cost")]
-        public decimal YearlyCost { get; set; }
+        [Display(Name = "Monthly Cost")]
+        public decimal MonthlyCost { get; set; }
     }
 }
