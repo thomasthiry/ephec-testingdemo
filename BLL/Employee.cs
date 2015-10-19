@@ -22,6 +22,10 @@ namespace TestingDemo.Domain
 
         public decimal HealthInsuranceMonthlyAmount { get; set; }
 
+        public decimal HealthInsuranceTotalMonthlyFamilyAmount => HealthInsuranceMonthlyAmount
+                                                                  + (IsMarried ? HealthInsuranceMonthlyAmount : 0)
+                                                                  + NumberOfChildren * HealthInsuranceMonthlyAmount / 2;
+
         public decimal GroupInsuranceMonthlyAmount { get; set; }
 
         public decimal CellphoneMonthlyAmount { get; set; }
@@ -33,11 +37,24 @@ namespace TestingDemo.Domain
                 decimal mealVoucherMonthlyAmount = 0;
                 if (HasMealVouchers)
                 {
-                    mealVoucherMonthlyAmount = 21*7m;
+                    mealVoucherMonthlyAmount = 21 * 7m;
                 }
 
-                return Salary + mealVoucherMonthlyAmount + HealthInsuranceMonthlyAmount + GroupInsuranceMonthlyAmount + CellphoneMonthlyAmount;
+                var yearlyBonus = Salary * 0.92m;
+
+                var employerContributionRate = 1.3m;
+
+                var monthlyCost = Salary * employerContributionRate 
+                    + yearlyBonus / 12 * employerContributionRate
+                    + mealVoucherMonthlyAmount 
+                    + HealthInsuranceTotalMonthlyFamilyAmount
+                    + GroupInsuranceMonthlyAmount 
+                    + CellphoneMonthlyAmount;
+
+                return Decimal.Round(monthlyCost, 2);
             }
         }
+
+        public decimal YearlyCost => MonthlyCost * 12;
     }
 }
