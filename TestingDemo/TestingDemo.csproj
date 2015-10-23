@@ -169,6 +169,10 @@
     <Compile Include="ViewModels\EmployeeEdit.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\TestingDemo.mdf" />
+    <Content Include="App_Data\TestingDemo_log.ldf">
+      <DependentUpon>TestingDemo.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -208,9 +212,7 @@
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
