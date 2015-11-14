@@ -1,0 +1,68 @@
+﻿using System;
+using System.Threading;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.IE;
+using TestingDemo.AcceptanceTests.Pages;
+
+namespace TestingDemo.AcceptanceTests
+{
+    [TestClass]
+    public class ManageEmployeeTest
+    {
+        [TestMethod]
+        public void CreateAnEmployee()
+        {
+            using (IWebDriver wdriver = new ChromeDriver())
+            {
+                // Arrange
+                var employeeList = new EmployeeList(wdriver).GoTo();
+                var initialRowCount = employeeList.NumberOfRows;
+                var employeeDetails = employeeList.ClickOnCreate();
+
+                // Act
+                employeeList = employeeDetails.FillForm("Smith", "John", "01/03/1996");
+
+                Thread.Sleep(5000);
+
+                // Assert
+                var finalRowCount = employeeList.NumberOfRows;
+                Assert.AreEqual(initialRowCount + 1, finalRowCount);
+
+                wdriver.Quit();
+            }
+        }
+
+        //[TestMethod]
+        //public void ModifyAnEmployee()
+        //{
+        //    var dataBuilder = new DataBuilder();
+        //    var lastName = "Smith " + DateTime.Now.Ticks;
+        //    dataBuilder.AddEmployeeInDb(lastName, "John");
+
+        //    using (IWebDriver wdriver = new ChromeDriver())
+        //    {
+        //        var employeeList = new EmployeeList(wdriver).GoTo();
+        //        var rowIndex = employeeList.IndexOf(lastName);
+        //        Assert.AreEqual(1, rowIndex);
+
+        //        var employeeDetails = employeeList.EditEmployee(lastName);
+
+        //        var lastNameModified = "Mc Lane " + DateTime.Now.Ticks;
+        //        employeeDetails.FillLastName(lastNameModified);
+        //        employeeDetails.FillFirstName("John");
+        //        employeeDetails.FillBirthDate("9/11/1976");
+        //        employeeDetails.SubmitForm();
+
+        //        rowIndex = employeeList.IndexOf(lastName);
+        //        Assert.IsTrue(rowIndex > 0);
+
+        //        rowIndex = employeeList.IndexOf(lastNameModified);
+        //        Assert.IsTrue(rowIndex > 0);
+
+
+        //    }
+        //}
+    }
+}
