@@ -1,5 +1,5 @@
 ﻿Tests:
-- MonthlyCost_OnlySalary_ReturnsSalaryWithEmployerCotisations
+- MonthlyCost_OnlySalary_ReturnsSalaryWithEmployerContributions
 - MonthlyCost_OnlyMealVouchers_ReturnsSumForMonth
 - MonthlyCost_FullPackage_ReturnsFullTotal
 - MonthlyCost_NoPackage_ReturnsZero
@@ -10,8 +10,9 @@ TDD:
 - MonthlyCost_Maried_HealthInsuranceIncludesPartnerFee
 - MonthlyCost_Family_HealthInsuranceIncludesFamilyFee
 
-BDD:
-- DailyCost_FullPackage
-
 UI:
 - CreateEmployee
+
+BDD:
+- DailyCost_FullPackage (UT)
+- ... (UI)

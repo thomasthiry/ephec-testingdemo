@@ -32,24 +32,15 @@ namespace TestingDemo.AcceptanceTests.Pages
             return this;
         }
 
-        public void FillLastName(string lastName)
+        public EmployeeList FillForm(string lastName, string firstName, string birthDate)
         {
             LastName.SendKeys(lastName);
-        }
-
-        public void FillFirstName(string firstName)
-        {
             FirstName.SendKeys(firstName);
-        }
-
-        public void FillBirthDate(string birthDate)
-        {
             BirthDate.SendKeys(birthDate);
-        }
 
-        public void SubmitForm()
-        {
             CreateButton.Click();
+
+            return new EmployeeList(_driver);
         }
     }
 }
