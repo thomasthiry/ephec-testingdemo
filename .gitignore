@@ -52,3 +52,7 @@ _ReSharper*/
  
 # NCrunch
 *ncrunch*
+
+*.mdf
+*.sdf
+*.ldf
