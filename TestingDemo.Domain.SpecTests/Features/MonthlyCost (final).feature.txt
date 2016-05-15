@@ -6,5 +6,11 @@
 Scenario: The employee only has a salary
 	Given I have an employee with a salary of 1000 euros
 	When I view his cost
-	Then the cost is 1508 euros
+	Then the cost is 1399.67 euros
+
+Scenario: The employee has a salary and meal vouchers
+	Given I have an employee with a salary of 1000 euros
+	And the employee has meal vouchers
+	When I view his cost
+	Then the cost is 1555.33 euros
 

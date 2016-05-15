@@ -61,10 +61,15 @@
       <DependentUpon>MonthlyCost.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Steps\MonthlyCostSteps %28final%29.cs.txt" />
     <Compile Include="Steps\MonthlyCostSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="Features\MonthlyCost %28final%29.feature.txt">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MonthlyCost %28final%29.feature.feature.cs</LastGenOutput>
+    </Content>
     <None Include="Features\MonthlyCost.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MonthlyCost.feature.cs</LastGenOutput>

@@ -10,13 +10,13 @@ namespace TestingDemo.Domain.Tests
         public void MonthlyCost_OnlySalary_ReturnsSalaryWithEmployerContributions()
         {
             // Arrange
-            var employee = new Employee { Salary = 1000m };
+            var employee = new Employee { Salary = 1000 };
 
             // Act
             var cost = employee.MonthlyCost;
 
             // Assert
-            Assert.AreEqual(1408.33m, cost);
+            Assert.AreEqual(1508, cost);
         }
 
         [TestMethod]
@@ -29,20 +29,20 @@ namespace TestingDemo.Domain.Tests
             var cost = employee.MonthlyCost;
 
             // Assert
-            Assert.AreEqual(147m, cost);
+            Assert.AreEqual(147, cost);
         }
 
         [TestMethod]
         public void MonthlyCost_FullPackage_ReturnsFullTotal()
         {
             // Arrange
-            var employee = new Employee { Salary = 1000m, CellphoneMonthlyAmount = 50m, GroupInsuranceMonthlyAmount = 30m, HealthInsuranceMonthlyAmount = 50m, HasMealVouchers = true };
+            var employee = new Employee { Salary = 1000, CellphoneMonthlyAmount = 50, GroupInsuranceMonthlyAmount = 30, HasMealVouchers = true };
 
             // Act
             var cost = employee.MonthlyCost;
 
             // Assert
-            Assert.AreEqual(1635.33m, cost);
+            Assert.AreEqual(1527, cost);
         }
 
         [TestMethod]
@@ -55,20 +55,20 @@ namespace TestingDemo.Domain.Tests
             var cost = employee.MonthlyCost;
 
             // Assert
-            Assert.AreEqual(0m, cost);
+            Assert.AreEqual(0, cost);
         }
 
         [TestMethod]
-        public void MonthlyCost_IncludesHolidayBonus_ReturnsSalaryAndBonus()
+        public void YearlyCost_FullPackage_ReturnsYearlyCost()
         {
             // Arrange
-            var employee = new Employee { Salary = 1000m };
+            var employee = new Employee { Salary = 1000, CellphoneMonthlyAmount = 50, GroupInsuranceMonthlyAmount = 30, HasMealVouchers = true };
 
             // Act
-            var cost = employee.MonthlyCost;
+            var cost = employee.YearlCost;
 
             // Assert
-            Assert.AreEqual(1408.33m, cost);
+            Assert.AreEqual(20820, cost);
         }
     }
 }

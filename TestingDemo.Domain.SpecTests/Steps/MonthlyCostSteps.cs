@@ -15,7 +15,7 @@ namespace TestingDemo.Domain.SpecTests.Steps
         {
             _employee = new Employee { Salary = salary };
         }
-        
+
         [When(@"I view his cost")]
         public void WhenIViewHisCost()
         {
@@ -27,5 +27,6 @@ namespace TestingDemo.Domain.SpecTests.Steps
         {
             Assert.AreEqual(expectedCost, _cost);
         }
+
     }
 }

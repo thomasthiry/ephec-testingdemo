@@ -1,12 +1,13 @@
 ﻿Tests:
-- MonthlyCost_OnlySalary_ReturnsSalaryWithEmployerContributions
-- MonthlyCost_OnlyMealVouchers_ReturnsSumForMonth
-- MonthlyCost_FullPackage_ReturnsFullTotal
+- MonthlyCost_OnlySalary_ReturnsSalaryWithEmployerContributions (1000 => 1300)
+- MonthlyCost_OnlyMealVouchers_ReturnsSumForMonth (147)
+- MonthlyCost_FullPackage_ReturnsFullTotal (Salary = 1000, Cellphone = 50, Group = 30, Health = 0, MealVouchers => 1527)
 - MonthlyCost_NoPackage_ReturnsZero
 
 TDD:
-- Include Holiday Bonus in Monthly Cost
-- YearlyCost_FullPackage_ReturnsYearlyCost
+- Include Holiday Bonus in Monthly Cost : salary * (12 + 1 + 0.92) / 12          (1000 => 1508)
+- YearlyCost_FullPackage_ReturnsYearlyCost : monthly * 12          (=> 20820)
+- MonthlyCost_NotMaried_ReturnsHealthInsurance
 - MonthlyCost_Maried_HealthInsuranceIncludesPartnerFee
 - MonthlyCost_Family_HealthInsuranceIncludesFamilyFee
 
@@ -14,5 +15,5 @@ UI:
 - CreateEmployee
 
 BDD:
-- DailyCost_FullPackage (UT)
+- DailyCost With Meal Vouchers (1655 euros)
 - ... (UI)

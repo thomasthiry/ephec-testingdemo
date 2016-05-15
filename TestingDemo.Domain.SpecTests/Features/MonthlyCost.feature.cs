@@ -82,7 +82,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.When("I view his cost", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.Then("the cost is 1399.67 euros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the cost is 1508 euros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

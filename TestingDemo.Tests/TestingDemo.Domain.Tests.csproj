@@ -85,6 +85,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EmployeTests %28final%29.cs.txt" />
+    <Content Include="EmployeTests %28initial%29.cs.txt" />
     <Compile Include="EmployeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
