@@ -70,7 +70,6 @@
     <Content Include="CreateEmployeeTest %28final%29.cs.txt" />
     <Content Include="CreateEmployeeTest %28initial%29.cs.txt" />
     <Compile Include="CreateEmployeeTest.cs" />
-    <Compile Include="DataBuilder.cs" />
     <Compile Include="Pages\EmployeeDetails.cs" />
     <Compile Include="Pages\EmployeeList.cs" />
     <Compile Include="Pages\PageObject.cs" />
