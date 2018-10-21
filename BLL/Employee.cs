@@ -37,16 +37,14 @@ namespace TestingDemo.Domain
                 }
 
                 var employerContributionRate = 1.3m;
-                var bonusRate = (12 + 1 + 0.92m) / 12m;
-                var monthlyCost = Salary * bonusRate * employerContributionRate
-                    + mealVoucherMonthlyAmount
-                    + GroupInsuranceMonthlyAmount
-                    + CellphoneMonthlyAmount;
+
+                var monthlyCost = Salary * employerContributionRate
+                                  + mealVoucherMonthlyAmount
+                                  + GroupInsuranceMonthlyAmount
+                                  + CellphoneMonthlyAmount;
 
                 return Decimal.Round(monthlyCost, 2);
             }
         }
-
-        public decimal YearlCost => MonthlyCost * 12;
     }
 }
